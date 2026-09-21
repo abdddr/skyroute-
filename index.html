@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page look correct on phones/tablets, not just desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyRoute | Flight Booking</title>
+
+  <!-- Single external stylesheet shared by both pages -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <!-- Same header structure is reused on booking.html so the site feels consistent -->
+  <header class="site-header">
+    <div class="logo">SkyRoute</div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="booking.html">Book a Flight</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main>
+
+    <!-- ---------- Hero / intro text ---------- -->
+    <section class="hero">
+      <h1>Find your next flight</h1>
+      <p>Search hundreds of routes and book in a few clicks.</p>
+    </section>
+
+    <!-- ---------- Flight search form ---------- -->
+    <!-- This is a demo form only: it does not connect to a real server.
+         It exists to show HTML form elements (input, select) and
+         basic CSS layout with flexbox rows. -->
+    <form class="search-form" action="booking.html" method="get">
+
+      <!-- Row 1: From / To -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="origin">From</label>
+          <input type="text" id="origin" name="origin" placeholder="Astana (NQZ)" required>
+        </div>
+
+        <div class="form-group">
+          <label for="destination">To</label>
+          <input type="text" id="destination" name="destination" placeholder="Almaty (ALA)" required>
+        </div>
+      </div>
+
+      <!-- Row 2: Dates -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="depart">Departure date</label>
+          <input type="date" id="depart" name="depart" required>
+        </div>
+
+        <div class="form-group">
+          <label for="return">Return date</label>
+          <input type="date" id="return" name="return">
+        </div>
+      </div>
+
+      <!-- Row 3: Passengers / Class -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="passengers">Passengers</label>
+          <select id="passengers" name="passengers">
+            <option value="1">1 Passenger</option>
+            <option value="2">2 Passengers</option>
+            <option value="3">3 Passengers</option>
+            <option value="4">4 Passengers</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="class">Class</label>
+          <select id="class" name="class">
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Submit sends the user to booking.html to "see results" -->
+      <button type="submit" class="btn">Search Flights</button>
+    </form>
+
+    <!-- ---------- Popular Destinations (Flexbox card row - Task 2) ---------- -->
+    <!-- Each card has an image, title, short text, and a button.
+         .card-row is a flex container so the cards sit in a row with
+         equal height and a consistent gap. -->
+    <section class="destinations-preview">
+      <h2>Popular Destinations</h2>
+
+      <div class="card-row">
+
+        <article class="dest-card">
+          <div class="dest-card-img dest-img--almaty" aria-hidden="true"></div>
+          <div class="dest-card-body">
+            <h3>Almaty</h3>
+            <p>Mountain views and the country's largest city, a short hop from Astana.</p>
+            <a href="booking.html?destination=Almaty" class="btn">View Flights</a>
+          </div>
+        </article>
+
+        <article class="dest-card">
+          <div class="dest-card-img dest-img--shymkent" aria-hidden="true"></div>
+          <div class="dest-card-body">
+            <h3>Shymkent</h3>
+            <p>Historic bazaars and southern hospitality, starting from $38 one-way.</p>
+            <a href="booking.html?destination=Shymkent" class="btn">View Flights</a>
+          </div>
+        </article>
+
+        <article class="dest-card">
+          <div class="dest-card-img dest-img--aktau" aria-hidden="true"></div>
+          <div class="dest-card-body">
+            <h3>Aktau</h3>
+            <p>Caspian Sea coastline and desert cliffs, popular for weekend trips.</p>
+            <a href="booking.html?destination=Aktau" class="btn">View Flights</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- Required by the assignment: lists all team members -->
+  <footer class="site-footer">
+    <p>SkyRoute Flight Booking Demo &mdash; Team Members: Kagan Tasbolat, Abdrakhman Almukhan</p>
+  </footer>
+
+</body>
+</html>

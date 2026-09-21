@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyRoute | Destinations</title>
+
+  <!-- Same shared stylesheet as index.html and booking.html -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       PAGE GRID (Task 3)
+       .page-grid is the grid container for this whole page:
+       header spans the top, sidebar sits on the left, the
+       gallery (main) sits on the right, footer spans the bottom.
+  ========================================================= -->
+  <div class="page-grid">
+
+    <!-- ===================== HEADER (grid area: header) ===================== -->
+    <header class="site-header grid-header">
+      <div class="logo">SkyRoute</div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="booking.html">Book a Flight</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===================== SIDEBAR (grid area: sidebar) ===================== -->
+    <aside class="sidebar grid-sidebar">
+      <h2>Filter Destinations</h2>
+
+      <div class="filter-group">
+        <h3>Region</h3>
+        <label><input type="checkbox" checked> Southern Kazakhstan</label>
+        <label><input type="checkbox" checked> Western Kazakhstan</label>
+        <label><input type="checkbox" checked> Northern Kazakhstan</label>
+        <label><input type="checkbox" checked> Eastern Kazakhstan</label>
+      </div>
+
+      <div class="filter-group">
+        <h3>Price</h3>
+        <label><input type="radio" name="price" checked> Any price</label>
+        <label><input type="radio" name="price"> Under $40</label>
+        <label><input type="radio" name="price"> $40 - $70</label>
+      </div>
+
+      <button type="button" class="btn">Apply Filters</button>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT (grid area: main) ===================== -->
+    <main class="grid-main">
+      <h1>Where SkyRoute Flies</h1>
+      <p class="section-intro">Nine domestic routes, all bookable in a few clicks. Hover a card to see the route name.</p>
+
+      <!-- ---------- Image Gallery (Grid - Task 4) ---------- -->
+      <!-- .gallery is a grid container with equal-width columns and a
+           consistent gap. Each .gallery-item shows a caption overlay
+           on hover/focus using an absolutely positioned .caption. -->
+      <div class="gallery">
+
+        <a href="booking.html?destination=Almaty" class="gallery-item gallery-img--almaty">
+          <span class="caption">Almaty</span>
+        </a>
+        <a href="booking.html?destination=Shymkent" class="gallery-item gallery-img--shymkent">
+          <span class="caption">Shymkent</span>
+        </a>
+        <a href="booking.html?destination=Aktau" class="gallery-item gallery-img--aktau">
+          <span class="caption">Aktau</span>
+        </a>
+        <a href="booking.html?destination=Turkistan" class="gallery-item gallery-img--turkistan">
+          <span class="caption">Turkistan</span>
+        </a>
+        <a href="booking.html?destination=Karagandy" class="gallery-item gallery-img--karagandy">
+          <span class="caption">Karagandy</span>
+        </a>
+        <a href="booking.html?destination=Kokshetau" class="gallery-item gallery-img--kokshetau">
+          <span class="caption">Kokshetau</span>
+        </a>
+        <a href="booking.html?destination=Oskemen" class="gallery-item gallery-img--oskemen">
+          <span class="caption">Oskemen</span>
+        </a>
+        <a href="booking.html?destination=Pavlodar" class="gallery-item gallery-img--pavlodar">
+          <span class="caption">Pavlodar</span>
+        </a>
+        <a href="booking.html?destination=Atyrau" class="gallery-item gallery-img--atyrau">
+          <span class="caption">Atyrau</span>
+        </a>
+
+      </div>
+    </main>
+
+    <!-- ===================== FOOTER (grid area: footer) ===================== -->
+    <footer class="site-footer grid-footer">
+      <p>SkyRoute Flight Booking Demo &mdash; Team Members: Kagan Tasbolat, Abdrakhman Almukhan</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
