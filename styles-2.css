@@ -1,0 +1,500 @@
+/* =========================================================
+   SkyRoute - Flight Booking Demo
+   styles.css
+   -----------------------------------------------------------
+   This is the ONE external stylesheet used by BOTH html pages
+   (index.html and booking.html).
+
+   Design goal: keep it minimal.
+   - Background: plain white
+   - One accent color (blue) used for links, buttons, headers
+   - A little bit of gray for borders/text so it does not look
+     completely flat
+   ========================================================= */
+
+/* -----------------------------------------------------------
+   1. CSS VARIABLES (custom properties)
+   -----------------------------------------------------------
+   Storing our colors here means we only change them in ONE
+   place if we ever want a different accent color.
+----------------------------------------------------------- */
+:root {
+  --color-bg: #ffffff;        /* main background - white */
+  --color-text: #222222;      /* main text color - near black */
+  --color-accent: #2563eb;    /* accent color - blue */
+  --color-accent-dark: #1d4ed8; /* darker blue for hover states */
+  --color-border: #e2e8f0;    /* light gray for borders/lines */
+  --color-muted: #64748b;     /* muted gray text (subtitles etc.) */
+  --color-surface: #f8fafc;   /* light gray surface for sidebar/cards */
+}
+
+/* -----------------------------------------------------------
+   2. RESET / BASE STYLES
+   -----------------------------------------------------------
+   Removes default browser spacing so our own spacing is
+   predictable across pages.
+----------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding/border no longer add to width */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif; /* simple, no fancy web fonts */
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------------------------------------
+   3. HEADER / NAVIGATION
+   -----------------------------------------------------------
+   Same header is reused on both pages so the site feels
+   connected.
+----------------------------------------------------------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none; /* remove bullet points */
+  gap: 24px;
+}
+
+.main-nav a {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: var(--color-accent);
+}
+
+/* -----------------------------------------------------------
+   4. HERO SECTION (top banner on the home page)
+----------------------------------------------------------- */
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: var(--color-muted);
+  margin-bottom: 30px;
+}
+
+/* -----------------------------------------------------------
+   5. SEARCH FORM (flight search box on the home page)
+----------------------------------------------------------- */
+.search-form {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+/* Rows arrange fields side by side on wider screens */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: var(--color-muted);
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-accent); /* accent shows what's focused */
+}
+
+/* -----------------------------------------------------------
+   6. BUTTONS
+   -----------------------------------------------------------
+   One reusable button style used across both pages.
+----------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--color-accent-dark);
+  text-decoration: none;
+}
+
+/* -----------------------------------------------------------
+   7. FLIGHT CARDS (used on booking.html search results)
+----------------------------------------------------------- */
+.results {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.results h2 {
+  margin-bottom: 20px;
+}
+
+.flight-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.flight-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.flight-route {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.flight-details {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.flight-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+/* -----------------------------------------------------------
+   8. PASSENGER FORM (booking details on booking.html)
+----------------------------------------------------------- */
+.passenger-form {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.passenger-form h2 {
+  margin-bottom: 20px;
+}
+
+/* -----------------------------------------------------------
+   8b. DESTINATION CARDS (Flexbox card row - Task 2, on index.html)
+   -----------------------------------------------------------
+   .card-row is the flex container: cards sit in a row, share
+   the row's height equally (align-items: stretch, the flex
+   default), and keep a consistent gap between them.
+----------------------------------------------------------- */
+.destinations-preview {
+  max-width: 960px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.destinations-preview h2 {
+  margin-bottom: 20px;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.dest-card {
+  flex: 1 1 240px; /* grow/shrink equally, share height via stretch */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect required by the rubric: lift + shadow */
+.dest-card:hover,
+.dest-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dest-card-img {
+  height: 140px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+}
+
+/* Distinct gradient per city so the cards are visually different
+   even without real photography. Swap these backgrounds for real
+   photos before final submission. */
+.dest-img--almaty   { background: linear-gradient(135deg, #2563eb, #38bdf8); }
+.dest-img--shymkent { background: linear-gradient(135deg, #ea580c, #fbbf24); }
+.dest-img--aktau    { background: linear-gradient(135deg, #0891b2, #22d3ee); }
+
+.dest-card-body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* pushes the button to the bottom of every card equally */
+  gap: 8px;
+}
+
+.dest-card-body h3 {
+  font-size: 1.1rem;
+}
+
+.dest-card-body p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.dest-card-body .btn {
+  align-self: flex-start;
+}
+
+/* -----------------------------------------------------------
+   8c. PAGE GRID LAYOUT (CSS Grid - Task 3, destinations.html)
+   -----------------------------------------------------------
+   .page-grid is the grid container for the whole destinations
+   page: header spans the top, sidebar sits left, main content
+   sits right, footer spans the bottom.
+----------------------------------------------------------- */
+.page-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  min-height: 100vh;
+}
+
+.grid-header { grid-area: header; }
+.grid-sidebar { grid-area: sidebar; }
+.grid-main { grid-area: main; }
+.grid-footer { grid-area: footer; }
+
+.sidebar {
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: 30px 24px;
+}
+
+.sidebar h2 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  margin-bottom: 24px;
+}
+
+.filter-group h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.filter-group input {
+  margin-right: 8px;
+}
+
+.filter-empty {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.grid-main {
+  padding: 40px;
+}
+
+.section-intro {
+  color: var(--color-muted);
+  margin-bottom: 24px;
+}
+
+/* -----------------------------------------------------------
+   8d. IMAGE GALLERY (CSS Grid - Task 4, destinations.html)
+   -----------------------------------------------------------
+   .gallery is a grid container: equal-width columns that wrap
+   automatically depending on available space, with a consistent
+   gap. Each item reveals a caption overlay on hover/focus.
+----------------------------------------------------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Distinct gradient per city, standing in for a real photo. */
+.gallery-img--almaty    { background: linear-gradient(135deg, #2563eb, #38bdf8); }
+.gallery-img--shymkent  { background: linear-gradient(135deg, #ea580c, #fbbf24); }
+.gallery-img--aktau     { background: linear-gradient(135deg, #0891b2, #22d3ee); }
+.gallery-img--turkistan { background: linear-gradient(135deg, #7c3aed, #c084fc); }
+.gallery-img--karagandy { background: linear-gradient(135deg, #475569, #94a3b8); }
+.gallery-img--kokshetau { background: linear-gradient(135deg, #16a34a, #86efac); }
+.gallery-img--oskemen   { background: linear-gradient(135deg, #b91c1c, #f87171); }
+.gallery-img--pavlodar  { background: linear-gradient(135deg, #0f766e, #5eead4); }
+.gallery-img--atyrau    { background: linear-gradient(135deg, #a16207, #fde047); }
+
+.gallery-item .caption {
+  position: absolute;
+  inset: auto 0 0 0; /* pinned to the bottom edge */
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.gallery-item:hover .caption,
+.gallery-item:focus .caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* -----------------------------------------------------------
+   9. FOOTER
+   -----------------------------------------------------------
+   Required by the assignment: must list all team members.
+   Reused on both pages.
+----------------------------------------------------------- */
+.site-footer {
+  text-align: center;
+  padding: 24px 20px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* -----------------------------------------------------------
+   10. SIMPLE RESPONSIVE ADJUSTMENT
+   -----------------------------------------------------------
+   Stack the header and form rows on small screens.
+----------------------------------------------------------- */
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .flight-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-row {
+    flex-direction: column;
+  }
+
+  /* Collapse the page grid to a single column: header, sidebar,
+     main, footer stack top to bottom instead of side by side. */
+  .page-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .grid-main {
+    padding: 30px 20px;
+  }
+}
