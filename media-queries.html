@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyRoute | Part 1 - Media Queries</title>
+  <!-- Part 1 uses ONLY custom CSS media queries (no Bootstrap) -->
+  <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+
+  <header class="demo-header">
+    <a class="brand" href="index.html">SkyRoute</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="booking.html">Book a Flight</a>
+      <a href="media-queries.html">Responsive Demo</a>
+    </nav>
+  </header>
+
+  <main class="demo-main">
+    <p class="breakpoint-label" role="status"></p>
+
+    <!-- ================= TASK 1: Responsive typography ================= -->
+    <section class="typo">
+      <h1>Fly Smarter with SkyRoute</h1>
+      <p>Resize this window and watch the text change. Font sizes grow from mobile to tablet to desktop using CSS media queries.</p>
+
+      <h2>Why responsive text matters</h2>
+      <p>A heading that looks perfect on a wide monitor can fill a whole phone screen. Media queries let us pick a comfortable size for each device, so the text is always easy to read.</p>
+
+      <h3>How it works here</h3>
+      <p>The base styles are written for mobile. At 768px the tablet sizes take over, and at 1024px the desktop sizes take over.</p>
+    </section>
+
+    <!-- ================= TASK 2: Card group (media queries only) ================= -->
+    <section class="cards-section">
+      <h2>Popular Destinations</h2>
+      <div class="card-group-mq">
+
+        <article class="mq-card">
+          <img src="images/almaty.svg" alt="Illustration of Almaty with mountains">
+          <div class="mq-card-body">
+            <h3>Almaty</h3>
+            <p>Mountain views and the country's largest city.</p>
+            <a class="mq-btn" href="booking.html">View Flights</a>
+          </div>
+        </article>
+
+        <article class="mq-card">
+          <img src="images/shymkent.svg" alt="Illustration of Shymkent at sunset">
+          <div class="mq-card-body">
+            <h3>Shymkent</h3>
+            <p>Historic bazaars and southern hospitality.</p>
+            <a class="mq-btn" href="booking.html">View Flights</a>
+          </div>
+        </article>
+
+        <article class="mq-card">
+          <img src="images/aktau.svg" alt="Illustration of Aktau on the Caspian coast">
+          <div class="mq-card-body">
+            <h3>Aktau</h3>
+            <p>Caspian Sea coastline and desert cliffs.</p>
+            <a class="mq-btn" href="booking.html">View Flights</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="demo-footer">
+    <p>SkyRoute Flight Booking Demo &mdash; Team Members: Kagan Tasbolat, Abdrakhman Almukhan</p>
+  </footer>
+
+</body>
+</html>

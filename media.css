@@ -1,0 +1,116 @@
+/* =========================================================
+   media.css  -  Part 1 (Task 1 + Task 2), used ONLY by
+   media-queries.html. No Bootstrap here, pure CSS.
+   Approach: MOBILE-FIRST. Base rules = mobile (< 768px).
+   min-width queries then upgrade to tablet and desktop.
+   Breakpoints: tablet >= 768px, desktop >= 1024px
+   ========================================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222222;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+a { color: #1d4ed8; }
+
+/* ---------- Header / footer ---------- */
+.demo-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: #212529;
+}
+.demo-header .brand { color: #67e8f9; font-weight: bold; font-size: 1.3rem; text-decoration: none; }
+.demo-header nav { display: flex; flex-wrap: wrap; gap: 16px; }
+.demo-header nav a { color: #ffffff; text-decoration: none; }
+.demo-header nav a:hover { text-decoration: underline; }
+
+.demo-footer {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.demo-main { max-width: 1100px; margin: 0 auto; padding: 24px 20px 40px; }
+
+/* Live label that shows which breakpoint is active */
+.breakpoint-label {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #e0e7ff;
+  color: #1e3a8a;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.breakpoint-label::after { content: "Mobile layout (under 768px)"; }
+
+/* =========================================================
+   TASK 1 - Responsive typography
+   Mobile: small | Tablet: medium | Desktop: large
+   ========================================================= */
+.typo h1 { font-size: 1.75rem; margin-bottom: 12px; line-height: 1.2; }
+.typo h2 { font-size: 1.3rem;  margin: 20px 0 8px; }
+.typo h3 { font-size: 1.1rem;  margin: 16px 0 6px; }
+.typo p  { font-size: 1rem;    margin-bottom: 12px; }   /* 16px */
+
+/* TASK 2 base (mobile): cards stacked vertically */
+.cards-section { margin-top: 40px; }
+.cards-section > h2 { font-size: 1.3rem; margin-bottom: 16px; }
+.card-group-mq { display: flex; flex-wrap: wrap; gap: 20px; }
+.mq-card {
+  flex: 0 0 100%;                 /* 1 card per row */
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.mq-card img { display: block; width: 100%; height: 150px; object-fit: cover; }
+.mq-card-body { padding: 16px; }
+.mq-card-body h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.mq-card-body p { font-size: 0.95rem; color: #495057; margin-bottom: 12px; }
+.mq-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: #1d4ed8;
+  color: #ffffff;
+  text-decoration: none;
+}
+.mq-btn:hover { background: #1e40af; }
+
+/* ---------- TABLET: 768px and up ---------- */
+@media (min-width: 768px) {
+  .breakpoint-label::after { content: "Tablet layout (768px - 1023px)"; }
+
+  .typo h1 { font-size: 2.25rem; }
+  .typo h2 { font-size: 1.6rem; }
+  .typo h3 { font-size: 1.3rem; }
+  .typo p  { font-size: 1.125rem; }   /* 18px */
+
+  /* 2 cards per row: (100% - one 20px gap) / 2 */
+  .mq-card { flex: 0 0 calc((100% - 20px) / 2); }
+}
+
+/* ---------- DESKTOP: 1024px and up ---------- */
+@media (min-width: 1024px) {
+  .breakpoint-label::after { content: "Desktop layout (1024px and up)"; }
+
+  .typo h1 { font-size: 3rem; }
+  .typo h2 { font-size: 2rem; }
+  .typo h3 { font-size: 1.5rem; }
+  .typo p  { font-size: 1.25rem; }    /* 20px */
+
+  /* 3 cards per row: (100% - two 20px gaps) / 3 */
+  .mq-card { flex: 0 0 calc((100% - 40px) / 3); }
+}
