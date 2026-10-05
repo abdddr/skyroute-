@@ -1,0 +1,110 @@
+/* =========================================================
+   styles.css - SkyRoute
+   ---------------------------------------------------------
+   Bootstrap 5.3 handles layout, navbar, forms, cards and
+   buttons. This file only adds what Bootstrap does not:
+     1. a higher-contrast blue (WCAG AA, 4.5:1 or better)
+     2. darker "secondary" text for small copy
+     3. image sizing, hero background, hover effect
+     4. boarding-pass style flight cards
+   Spacing comes from Bootstrap utility classes, not from
+   custom margin/padding rules.
+   ========================================================= */
+
+/* ---------- 1. Colour tokens (contrast checked) ---------- */
+:root {
+  --bs-primary: #0a58ca;            /* 6.4:1 on white */
+  --bs-primary-rgb: 10, 88, 202;
+  --bs-link-color: #0a58ca;
+  --bs-link-color-rgb: 10, 88, 202;
+  --bs-link-hover-color: #084298;
+  --bs-link-hover-color-rgb: 8, 66, 152;
+  --sr-ink: #0b2a5b;                /* deep navy used in the hero */
+}
+
+.btn-primary {
+  --bs-btn-bg: #0a58ca;
+  --bs-btn-border-color: #0a58ca;
+  --bs-btn-hover-bg: #084298;
+  --bs-btn-hover-border-color: #084298;
+  --bs-btn-active-bg: #084298;
+  --bs-btn-active-border-color: #084298;
+  --bs-btn-disabled-bg: #0a58ca;
+  --bs-btn-disabled-border-color: #0a58ca;
+}
+.btn-outline-primary {
+  --bs-btn-color: #0a58ca;
+  --bs-btn-border-color: #0a58ca;
+  --bs-btn-hover-bg: #0a58ca;
+  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-active-bg: #0a58ca;
+  --bs-btn-active-border-color: #0a58ca;
+}
+
+/* ---------- 2. Readable secondary text (7.5:1 on white, 7:1 on light grey) ---------- */
+.text-secondary { color: #495057 !important; }
+
+/* ---------- 3. Images, hero, hover ---------- */
+.img-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .carousel-img { height: 340px; }
+}
+@media (min-width: 992px) {
+  .carousel-img { height: 420px; }
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--sr-ink) 0%, #0a58ca 100%);
+  color: #ffffff;
+}
+.hero .lead { color: #ffffff; }
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover,
+.card-hover:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- 4. Boarding-pass flight cards ---------- */
+.ticket {
+  border-left: 6px solid #0a58ca;
+}
+@media (min-width: 768px) {
+  .ticket-stub {
+    border-left: 2px dashed #adb5bd;
+  }
+}
+.btn-check:checked + .btn-outline-primary {
+  color: #ffffff;
+}
+
+/* ---------- Skip link + reduced motion ---------- */
+.skip-link:focus {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #0a58ca;
+  border-radius: 0.375rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover { transition: none; }
+  .card-hover:hover,
+  .card-hover:focus-within { transform: none; }
+}
