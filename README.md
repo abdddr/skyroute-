@@ -13,8 +13,8 @@ SkyRoute is a responsive flight-booking website for nonstop domestic routes from
 
 | Member | Group | Pages (HTML) | Scripts (JS) |
 |---|---|---|---|
-| Kagan Tasbolat | [your group] | `index.html`, `destinations.html` | `js/index.js`, `js/destinations.js` |
-| Abdrakhman Almukhan | [your group] | `booking.html`, `about.html` | `js/booking.js`, `js/about.js` |
+| Kagan Tasbolat | [SE-2502] | `index.html`, `destinations.html` | `js/index.js`, `js/destinations.js` |
+| Abdrakhman Almukhan | [SE-2502] | `booking.html`, `about.html` | `js/booking.js`, `js/about.js` |
 
 Each member owns two HTML pages. Shared files: `css/styles.css`, `images/`, this README.
 
@@ -105,7 +105,3 @@ Images use `object-fit: cover` with fixed heights, so they are never stretched. 
 
 - Demo project: flight data is generated in `js/booking.js`, and the forms do not send data anywhere.
 - Fares, flight times and airports are examples.
-
-## Credits
-
-Built with [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/). City illustrations are original SVG drawings made for this project.
